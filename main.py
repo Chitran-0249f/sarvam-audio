@@ -44,3 +44,9 @@ def text_to_speech(text: str):
             audio_file.write(audio_bytes)
         return output_filename
     return None
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=port)
